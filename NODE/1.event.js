@@ -20,8 +20,14 @@ let tIn = (p1,p2)=> {
     console.log('tIn',p1,p2);
     
 }
+let kkk = ()=> {
+    console.log('once')
+}
 let bell = new Bell()
 bell.on('ring',sIn)
 bell.on('ring',tIn)
+bell.once('ring',kkk)
 
 bell.emit('ring','param1','param2')
+bell.removeAllListener('ring')
+bell.emit('ring','param3','param4')
