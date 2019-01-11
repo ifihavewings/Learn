@@ -1,12 +1,16 @@
+// 实验失败。。。
 function Person() {
-    this.speak()
+    process.nextTick(()=> {
+        this.speak()
+
+    })
 }
-Person.prototype.speak = (fn)=>{
+Person.prototype.learn = (fn)=>{
     this.speak = fn
 }
 
 let p = new Person()
-p.speak(()=>{
+p.learn(()=>{
     console.log('hello');
     
 })
